@@ -1,4 +1,4 @@
-## node-project
+## medium-swagger
 
 ### environment
 
@@ -21,4 +21,10 @@ npm run format
 npm run ci:build
 npm run ci:test
 npm run format:check
+```
+
+### start it
+
+```bash
+npm run dev
 ```

@@ -1,0 +1,78 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Medium API",
+    "description": "Medium API",
+    "version": "1.0.0"
+  },
+  "host": "api.medium.com",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v1/me": {
+      "get": {
+        "description": "Get current user profile",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "accessToken",
+            "required": true,
+            "description": "integration token which you can access through your settings page at https://medium.com/me/settings"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/v1/users/{userId}/publications": {
+      "get": {
+        "description": "Get a list of publications for a given user",
+        "parameters": [
+          {
+          "in": "query",
+          "name": "accessToken",
+          "required": true,
+          "description": "integration token which you can access through your settings page at https://medium.com/me/settings"
+          },
+          {
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "description": "not a user handle, find yours from /v1/me response"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    },
+    "/v1/publications/{publicationId}/contributors": {
+      "get": {
+        "parameters": [
+          {
+          "in": "query",
+          "name": "accessToken",
+          "required": true,
+          "description": "integration token which you can access through your settings page at https://medium.com/me/settings"
+          },
+          {
+            "in": "path",
+            "name": "publicationId",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          }
+        }
+      }
+    }
+  }
+}
