@@ -28,3 +28,11 @@ npm run format:check
 ```bash
 npm run dev
 ```
+
+### codegen
+
+* typescript-fetch
+```bash
+mvn -P swagger-codegen
+```
+
