@@ -9,14 +9,14 @@
 
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-
-        <language>java</language>
+        <language>typescript-fetch</language>
     </properties>
 
     <profiles>
         <profile>
             <id>swagger-codegen</id>
             <build>
+                <defaultGoal>compile</defaultGoal>
                 <plugins>
                     <plugin>
                         <groupId>io.swagger</groupId>
@@ -29,10 +29,8 @@
                                 </goals>
                                 <configuration>
                                     <inputSpec>${project.basedir}/src/medium.json</inputSpec>
+                                    <output>${project.basedir}/lib/generated/${language}</output>
                                     <language>${language}</language>
-                                    <configOptions>
-                                        <sourceFolder>src/gen/java/main</sourceFolder>
-                                    </configOptions>
                                 </configuration>
                             </execution>
                         </executions>
